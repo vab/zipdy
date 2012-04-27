@@ -1,0 +1,57 @@
+About Zipdy
+-----------
+Zipdy is a program for calculating the distance between two zip
+codes and finding all the records in a RDBMS with a zip code
+with x miles of another zip code. Currently, RDBMS support
+exists for postgreSQL. Additional future support for other
+databases will be added in future releases of zipdy.
+
+Zipdy is public domain software. Zipdy was written in C but is
+also available in PHP and perl. It runs with data from the US
+Census Gazetteer program. The data is from the 2000 census.
+
+The distance calculations are made by doing a great circle
+calculation on longitude and latitude points provided by
+the census data. The result is returned in standard miles.
+
+Full information about the installation of Zipdy can be
+found in the INSTALL file in this directory.
+
+
+Files
+-----
+zipdy-x.x.x	Zipdy Distribution Archive
+	AUTHORS		Contributors to the Zipdy Project
+        BUGS		Known Bugs and problems with Zipdy
+        COPYING		Statement of Public Domain Status
+        NEWS		News
+        README		This file
+        TODO		Work to be done on Zipdy
+        INSTALL		Instructions on how to install Zipdy
+	doc/	Additional Documentation
+        	faq.html	Frequently Asked Questions
+	cgi/
+        	zipdy.c		C version of Zipdy CGI Script
+                zipdy.php	PHP version of Zipdy CGI Script
+                zipdy.pl	Perl version of Zipdy CGI Script
+        optional/
+		gdbm_create.c	Program to convert Census Data
+                		  file To GDBM database
+                zipdy_force.c	Program to generate data files
+                		  from GDBM database
+                zipdy_test.c	Program to test GIS calcs on your
+                		  system
+        proximity/
+        	convert_to_sql.pl	Perl script to convert data
+                			  files to sql script
+                zipdy.sql		Zipdy db schema
+
+
+Patches
+-------
+I ask that you surrender copyright on your patches to Zipdy
+over to the maintainer.  If you do not surrender copyright,
+please state so explicitly in your submission email.  I will
+most likely attempt to reimplement your patch if you do not
+surrender your copyright.
+

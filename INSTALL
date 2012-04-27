@@ -1,0 +1,95 @@
+Installion of Zipdy for Distance Calculations
+---------------------------------------------
+
+In order to install Zipdy for distance calculations, you must
+have the GDBM database libraries suppored on your platform.
+You must also have your webserver configured to support CGI
+script.
+
+The steps to install Zipdy for distance calculations are to
+upload the GDBM database to a location on your web server
+where the Zipdy CGI script you would like to use can read it,
+modify the CGI script your would like to use if necessary,
+compile the CGI script if necessary, and finally to upload
+the CGI script to the web server and change its permissions
+to allow it to be run by the web server.
+
+You may need to modify the path to the GDBM database file in
+the Zipdy CGI script source code, depending upon where that
+file is stored.  If you need to provide additional path
+information in the script source code, you should include
+that information as the full path from the root directory.
+
+After the first step of uploading the GDBM database is compete
+and after you have also completed the second step of modifying
+the script file if necessary, you should compile the CGI script
+if necessary.  Most likely, this is only necessary for the C
+version of the Zipdy CGI Script.  You can compile the C version
+of the CGI script with the following command:
+
+gcc -lgdbm zipdy.c -o zipdy.exe
+
+The next step is to upload the CGI script to the web server, this
+would be either zipdy.exe, zipdy.php or zipdy.pl.  The final
+step is to change the permissions on the uploaded CGI script,
+if necessary.  On a Linux or Unix web server, the permissions
+should be 755 or -rwxr-xr-x.
+
+You should now be able to run the Zipdy CGI.  If zipdy has
+difficulty reading the GDBM database, make sure the database
+has world read permissions and that your path information is
+correct.  If you have difficulty executing the Zipdy CGI
+script, make sure that the GDBM library is available and that
+your webserver is correctly configured for CGI.
+
+
+Installation of Zipdy for Proximity Searches
+--------------------------------------------
+
+In order to install Zipdy for proximity searches, you currently
+need to have the postgres RDBMS installed (including the
+development package for postgres, if you're install from RPMs).
+
+The first thing you need to do is to create a database for Zipdy.
+You can do this by su'ing to the postgres user and execute the
+zipdy.sql file:
+
+postgres% psql
+
+If you want to store the zip code data is a different database,
+of if you do not yet have a database created, you should create
+a database now by issuing the create database command in psql.
+
+When you have created and connected to the database that you
+want to insert the zip code information into you must run the
+sql commands in the file zipdy.sql.  These commands will set
+up the tables zipdy uses.  You can run those commands by typing
+the following command in psql:
+
+postgres=# \i zipdy.sql
+
+You can then begin the process of loading data into the zipdy
+tables.
+
+Before you can load the data into the database tables, you need
+to convert it to sql commands.  After you have downloaded the
+data files, you should decompress them.  You should then move
+them into a directory on a disk partition where you have at least
+1.5GB free.  Next, copy the convert_to_sql.pl script into that
+directory from the zipdy-2.0.0/src/proximity directory.  Now, run
+the convert_to_sql.pl script to convert the data files to a single
+file called zipdy_db_load.sql. If you now need the disk space, you
+can delete the data files with the exception of the new sql data
+file. Finally, you can run the zipdy_db_load.sql file just as you
+ran the zipdy.sql file:
+
+postgres=# \i zipdy_db_load.sql
+
+Note that while I note the difficulty of the above steps for data
+file conversion, I do not distribute the zipdy_db_load.sql file
+due to its massive size.
+
+If you successfully completed the above steps, you now have a
+populated database and you can run proximity queries as explained
+by the example in the zipdy.sql file.
+

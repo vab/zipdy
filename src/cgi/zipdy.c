@@ -6,7 +6,7 @@
  */
 
 /*
-	Version:        2.0.0
+	Version:        2.5.1
 	Description:	This is a simple CGI program to calculate
 			the distance between two zip codes.
 	Project:	Zipdy: Zip code distance calculator

@@ -7,7 +7,7 @@
 # Zipdy is public domain software.
 #
 
-#        Version:        2.0.0
+#        Version:        2.5.1
 #	 Description:	 This is an text processor to convert
 #			 the zipdy data files to SQL.
 #        Project:        Zipdy: Zip code distance calculator

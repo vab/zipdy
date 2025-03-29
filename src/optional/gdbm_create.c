@@ -6,7 +6,7 @@
  */
 
 /*
-        Version:        2.0.0
+        Version:        2.5.1
 	Description:	This program creates a GDBM database
 			of zip code information from the text
 			data file.

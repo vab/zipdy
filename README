@@ -46,12 +46,3 @@ zipdy-x.x.x	Zipdy Distribution Archive
                 			  files to sql script
                 zipdy.sql		Zipdy db schema
 
-
-Patches
--------
-I ask that you surrender copyright on your patches to Zipdy
-over to the maintainer.  If you do not surrender copyright,
-please state so explicitly in your submission email.  I will
-most likely attempt to reimplement your patch if you do not
-surrender your copyright.
-

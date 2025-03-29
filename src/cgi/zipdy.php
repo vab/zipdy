@@ -8,7 +8,7 @@
 
 
 /*
-        Version:        2.5.0
+        Version:        2.5.1
 	Description:	This is an example CGI version of Zipdy
 			written in php.
         Project:        Zipdy: Zip code distance calculator

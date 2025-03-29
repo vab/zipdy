@@ -6,7 +6,7 @@
  */
 
 /*
-	Version:	2.0.0
+	Version:	2.5.1
 	Description:	This program creates a number of GDBM
 			databases which list zip codes with
 			in a radius of another zip code.
